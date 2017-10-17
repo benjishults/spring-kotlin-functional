@@ -17,7 +17,7 @@ apply {
 plugins {
 	application
 	id("org.jetbrains.kotlin.jvm") version "1.1.51"
-	id ("com.github.johnrengelman.plugin-shadow") version "2.0.0"
+//	id ("com.github.johnrengelman.plugin-shadow") version "2.0.0"
 	id("io.spring.dependency-management") version "1.0.3.RELEASE"
 }
 
@@ -56,6 +56,8 @@ dependencies {
 	}
 	compile("io.projectreactor.ipc:reactor-netty")
 	compile("com.samskivert:jmustache")
+    
+	compile("javax.annotation:javax.annotation-api:1.3.1")
 
 	compile("org.slf4j:slf4j-api")
 	compile("ch.qos.logback:logback-classic")

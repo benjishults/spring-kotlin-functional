@@ -9,6 +9,7 @@ import org.springframework.web.reactive.function.server.bodyToServerSentEvents
 import reactor.core.publisher.Flux
 import java.time.Duration
 import java.time.LocalDate
+import javax.annotation.PostConstruct
 
 @Suppress("UNUSED_PARAMETER")
 class UserHandler {
@@ -30,6 +31,11 @@ class UserHandler {
 	
 	fun stream(req: ServerRequest) =
 			ok().bodyToServerSentEvents(userStream)
+    
+    @PostConstruct
+    fun afterPropertiesSet() {
+        System.out.println("AFTER PROPERTIES SET CALLED")
+    }
 	
 }
 
